@@ -1,3 +1,10 @@
+# [Thom H (https://github.com/thh21)] Reddit Screensaver
+#          https://github.com/thh21/redditScreensaver
+#		   Downloads different pictures from the front page of different subreddits
+# 		   each day. Subreddits set in json file in same dirrectory
+# 		   
+# ------------------------------------------------------------------
+
 import urllib2, urllib
 import json
 import os
@@ -6,6 +13,14 @@ import sys
 import getopt
 
 saveDir = os.environ['HOME'] + '/.redditScreensaver/images'
+
+def internetOn():
+    try:
+        response=urllib2.urlopen('http://reddit.com',timeout=1)
+        return True
+    except urllib2.URLError as err: pass
+    return False
+
 def clean():
     if os.path.isdir(saveDir):
         for file in os.listdir(saveDir):
@@ -51,14 +66,14 @@ def populate(subreddit):
 
 def main(argv):
     opts, args = getopt.getopt(argv, 'o:')
-    print 
-    
     for opt, arg in opts:
         if opt == '-o':
             saveDir = arg
-    clean()
-    subreddit = getSubreddit()
-    populate(subreddit)
+            
+    if internetOn():
+        clean()
+        subreddit = getSubreddit()
+        populate(subreddit)
 
 if __name__ == "__main__":
     main(sys.argv[1::])
