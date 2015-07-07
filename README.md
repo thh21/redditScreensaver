@@ -8,7 +8,9 @@ This script is designed to work best with the [SFW Porn Network](https://www.red
 
 ### Automatic
 - Set up the script
-	- Download zip, extract and run install.sh. 
+	- [Download zip](https://github.com/thh21/redditScreensaver/archive/master.zip)
+	- Extract
+	- Run install.sh. 
 - Set the screensaver source directory
 	- Go to system preferences -> desktop & screensaver -> screensaver. 
 	- Choose a slideshow screensaver
