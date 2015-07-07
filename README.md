@@ -40,6 +40,7 @@ Subreddits for each day are taken from the *subreddits.json* file. You can chang
 The script supports normal subreddits or multisubreddits
 
 `"type":"r"`
+
 e.g.
 > https://www.reddit.com/r/earthporn
 or 
@@ -48,8 +49,11 @@ or
 The Script also supports user saved lists e.g.
 for 
 > https://www.reddit.com/user/gremy0/m/sfwpornnetwork
+
 `"type":"user"`
+
 and
+
 `"pages":["gremy0/m/sfwpornnetwork"]`
 
 The default subreddits.json file has examples of each of these.
